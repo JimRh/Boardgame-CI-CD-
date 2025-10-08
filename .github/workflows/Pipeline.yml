@@ -3,7 +3,7 @@ name: build and test
 on: [push]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu
 
     steps:
       - name: Checkout code
