@@ -28,11 +28,11 @@ jobs:
           projectBaseDir: .
         env:
            SONAR_TOKEN: ${{secrets.SONARCUBE_SERVER}}
-           SONAR_HOST_URL: http://192.168.0.118:9000
+           SONAR_HOST_URL: https://epencephalic-wilber-multiovulated.ngrok-free.dev
 
       - name: SonarQube Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@v1
 
         env:
            SONAR_TOKEN: ${{secrets.SONARCUBE_SERVER}}
-           SONAR_HOST_URL: http://192.168.0.118:9000
+           SONAR_HOST_URL: https://epencephalic-wilber-multiovulated.ngrok-free.dev
