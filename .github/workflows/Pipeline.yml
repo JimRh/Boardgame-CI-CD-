@@ -3,7 +3,7 @@ name: build and test
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -17,10 +17,22 @@ jobs:
           architecture: x64
       
       - name: build with maven
-        run: mvn -B clean package
+        run: mvn -B clean verify
 
       - name: run tests
         run: mvn test
-   
+      
+      - name: SonarQube_analysis
+        uses: sonarsource/sonarqube-scan-action@v2
+        with:
+          projectBaseDir: .
+        env:
+           SONAR_TOKEN: ${{secrets.SONARCUBE_SERVER}}
+           SONAR_HOST_URL: http://192.168.0.118:9000
 
+      - name: SonarQube Quality Gate
+        uses: sonarsource/sonarqube-quality-gate-action@v1
 
+        env:
+           SONAR_TOKEN: ${{secrets.SONARCUBE_SERVER}}
+           SONAR_HOST_URL: http://192.168.0.118:9000
