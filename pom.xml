@@ -120,11 +120,11 @@
 	 <distributionManagement>
         <repository>
             <id>maven-releases</id>
-            <url>https://epencephalic-wilber-multiovulated.ngrok-free.dev</url>
+            <url>https://epencephalic-wilber-multiovulated.ngrok-free.dev/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
-            <url>https://epencephalic-wilber-multiovulated.ngrok-free.dev</url>
+            <url>https://epencephalic-wilber-multiovulated.ngrok-free.dev/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
