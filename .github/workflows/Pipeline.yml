@@ -63,7 +63,11 @@ jobs:
       
       - name: Build and push image dockerhub
         uses: Docker/build-push-action@v6
-        
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/database_service_project:latest
 
 
 
